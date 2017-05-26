@@ -1,0 +1,25 @@
+table {
+	width: 100%;
+}
+
+th {
+	text-align: left;
+}
+
+td {
+	line-height: 24px;
+}
+
+td.right {
+	text-align: right;
+	padding-right: 20px;
+}
+
+td > * {
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+.selected {
+	background: rgb(205, 232, 255);
+}

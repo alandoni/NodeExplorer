@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let folder of folders">
+    <img src="/assets/images/folder-status_01.png" *ngIf="folder.isOpened" (click)="onFolderCloseClick(folder)"/>
+    <img src="/assets/images/folder-status_02.png" *ngIf="!folder.isOpened" (click)="onFolderOpenClick(folder)"/>
+    <img src="/assets/images/file-icon_01.png" (click)="onFolderClick(folder)"/>
+    <span (click)="onFolderClick(folder)" [ngClass]="{'selected': folder.isSelected, 'not-selected': !folder.isSelected}">{{folder.name}}</span>
+    <div class="padding" *ngIf="folder.isOpened">
+      <app-folder-list [folders]="folder.folders" (onFolderChanged)="onFolderClick($event)"></app-folder-list>
+    </div>
+  </li>
+</ul>

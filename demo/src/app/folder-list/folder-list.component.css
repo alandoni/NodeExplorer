@@ -1,0 +1,21 @@
+ul {
+	list-style: none;
+	padding-left: 0; 
+}
+
+li {
+	line-height: 24px;
+}
+
+li > * {
+	line-height: 24px;
+	vertical-align: middle;
+}
+
+.padding {
+	padding-left: 10px;
+}
+
+.selected {
+	background: rgb(205, 232, 255);
+}

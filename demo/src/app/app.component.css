@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+}
+
+.left {
+	float: left;
+}
+
+.folders {
+	width: 15%;
+}
+
+.files {
+	width: 85%;
+}
+
+.clear {
+	clear: both;
+}

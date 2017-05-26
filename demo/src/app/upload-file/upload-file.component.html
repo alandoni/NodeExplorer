@@ -1,0 +1,11 @@
+<div class="file-reader-bg">
+	<div class="file-reader">
+    <form ngNoForm action="{{url}}" method="post" enctype="multipart/form-data" target="_blank" (submit)="submit($event)">
+		  <input type="file" name="file" (change)="fileChanged($event)" />
+      <div class="buttons">
+        <input class="button" type="submit" value="Send" name="send" />
+        <div class="button" (click)="cancel()">Cancel</div>
+      </div>
+    </form>
+	</div>
+</div>

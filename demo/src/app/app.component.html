@@ -1,0 +1,21 @@
+<div>
+	<app-actions (onButtonPressed)="onActionButtonPressed($event)"></app-actions>
+</div>
+<div class="clear"></div>
+<div>
+	<app-address [currentPath]="currentPath" (onPathChanged)="pathChanged($event)"></app-address>
+	<app-search (onSearch)="onSearch($event)"></app-search>
+</div>
+<br />
+<div>
+	<app-folder-list [folders]="currentPathFolders" (onFolderChanged)="pathChanged($event)" class="folders left"></app-folder-list>
+	<app-folder [files]="currentPathFiles" class="left files" (onFileSelected)="onFileSelected($event)" (onFileOpened)="onFileOpened($event)"></app-folder>
+</div>
+
+<div *ngIf="fileEditor">
+	<app-file-editor [fileContent]="fileContent" [file]="selectedFile" (onFileSaved)="closeEditor()" (onCancel)="closeEditor()"></app-file-editor>
+</div>
+
+<div *ngIf="fileUpload">
+	<app-upload-file [currentPath]="currentPath" (onUploadFinished)="closeUpload()" (onCancel)="closeUpload()"></app-upload-file>
+</div>

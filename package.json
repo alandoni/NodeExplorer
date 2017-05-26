@@ -1,0 +1,41 @@
+{
+  "name": "node-explorer",
+  "version": "0.0.1",
+  "description": "Node Explorer",
+  "main": "start.js",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node start.js",
+    "monitor": "./node_modules/.bin/node-dev start.js",
+    "lint": "./node_modules/.bin/eslint ./**/*.js  --ignore-path ./.eslintignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alandoni/NodeExplorer.git"
+  },
+  "keywords": [
+    "file",
+    "explorer",
+    "backend",
+    "node"
+  ],
+  "author": "Alan Donizete Quintiliano",
+  "license": "ISC",
+  "homepage": "https://github.com/alandoni/NodeExplorer#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.0",
+    "cors": "^2.8.1",
+    "express": "^4.15.0",
+    "multer": "^1.3.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.18.0",
+    "mocha": "^3.2.0",
+    "node-dev": "^3.1.3"
+  }
+}

@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th width="100px">
+        Size
+      </th>
+      <th>
+        Type
+      </th>
+      <th width="200px">
+        Modified
+      </th>
+    </tr>
+  </thead>
+  <tbody *ngIf="files">
+    <tr *ngFor="let file of files">
+      <td (click)="onFileSelect(file)" (dblclick)="onFileOpen(file)">
+        <img src="/assets/images/file-icon_02.png" *ngIf="file.isFile"/>
+        <img src="/assets/images/file-icon_01.png" *ngIf="!file.isFile"/>
+        <span [ngClass]="{'selected': file.isSelected, 'not-selected': !file.isSelected}">{{file.name}}</span>
+      </td>
+      <td class="right">
+        <span *ngIf="file.isFile">{{file.size}}</span>
+      </td>
+      <td>
+        <span *ngIf="file.isFile">{{file.type}}</span>
+      </td>
+      <td>
+        <span>{{file.modified}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
