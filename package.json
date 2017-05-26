@@ -1,7 +1,7 @@
 {
-  "name": "node-explorer",
+  "name": "node-file-explorer",
   "version": "0.0.1",
-  "description": "Node Explorer",
+  "description": "Node File Explorer",
   "main": "start.js",
   "scripts": {
     "test": "mocha --timeout 10000",
