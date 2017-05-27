@@ -24,7 +24,7 @@ import { NFEModule } from 'node-file-explorer/demo/src/app/app.module';
   declarations: [
     ...
   ],
-imports: [
+  imports: [
     NFEModule.forRoot('{INSERT YOUR URL HERE WITH THE PREFIX}/'),
     ...
   ],
