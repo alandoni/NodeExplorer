@@ -1,3 +1,4 @@
+import { ModuleWithProviders } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,8 @@ import { SearchComponent } from './search/search.component';
 import { FileService } from './file.service';
 import { FileEditorComponent } from './file-editor/file-editor.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,4 +38,11 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
   providers: [FileService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class NFEModule { 
+    static forRoot(host?: string): ModuleWithProviders {
+      environment.API_URL = host;
+      return {
+        ngModule: NFEModule
+      }
+    }
+}
