@@ -1,8 +1,8 @@
 {
   "name": "node-file-explorer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node File Explorer",
-  "main": "start.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 10000",
     "start": "node start.js",

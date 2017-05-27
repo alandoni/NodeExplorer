@@ -41,6 +41,8 @@ exports.set = function(app, prefix, firstPath) {
 			prefix = '/' + prefix;
 		}
 
+		logger.debug('Initializing node-file-explorer on ' + prefix);
+
 		app.get(prefix + '/', (request, response) => {
 			const fileHelper = new FileHelper();
 			logger.debug('Requesting initial folder ' + firstPath);
