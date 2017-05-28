@@ -18,31 +18,47 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
 
 import { environment } from './../environments/environment';
 
+export function declarations() {
+    return [
+        AppComponent,
+        FileViewerComponent,
+        FolderComponent,
+        FolderListComponent,
+        ActionsComponent,
+        AddressComponent,
+        SearchComponent,
+        FileEditorComponent,
+        UploadFileComponent
+    ];
+}
+
+export function imports() {
+    return [
+        BrowserModule,
+        FormsModule,
+        HttpModule
+    ];
+}
+
+export function providers() {
+    return [FileService];
+}
+
+export function bootstrap() {
+    return [AppComponent];
+}
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    FileViewerComponent,
-    FolderComponent,
-    FolderListComponent,
-    ActionsComponent,
-    AddressComponent,
-    SearchComponent,
-    FileEditorComponent,
-    UploadFileComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [FileService],
-  bootstrap: [AppComponent]
+    declarations: declarations(),
+    imports: imports(),
+    providers: providers(),
+    bootstrap: bootstrap()
 })
-export class NFEModule { 
+export class NFEModule {
     static forRoot(host: string): ModuleWithProviders {
-      environment.API_URL = host;
-      return {
-        ngModule: NFEModule
-      }
+        environment.API_URL = host;
+        return {
+            ngModule: NFEModule
+        }
     }
 }
