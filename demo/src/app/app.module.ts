@@ -39,7 +39,7 @@ import { environment } from './../environments/environment';
   bootstrap: [AppComponent]
 })
 export class NFEModule { 
-    static forRoot(host?: string): ModuleWithProviders {
+    static forRoot(host: string): ModuleWithProviders {
       environment.API_URL = host;
       return {
         ngModule: NFEModule
