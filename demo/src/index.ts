@@ -16,7 +16,7 @@ import { FileService } from './file.service';
 import { FileEditorComponent } from './file-editor/file-editor.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 
-import { environment } from './../environments/environment';
+import { environment } from './environment';
 
 export * from './actions/actions.component';
 export * from './address/address.component';
