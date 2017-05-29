@@ -18,8 +18,20 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
 
 import { environment } from './../environments/environment';
 
-export function declarations() {
-    return [
+export * from './actions/actions.component';
+export * from './address/address.component';
+export * from './file-editor/file-editor.component';
+export * from './file-viewer/file-viewer.component';
+export * from './folder/folder.component';
+export * from './folder-list/folder-list.component';
+export * from './search/search.component';
+export * from './upload-file/upload-file.component';
+export * from './app.component';
+export * from './file-actions.enum';
+export * from './file.service';
+
+@NgModule({
+    declarations: [
         AppComponent,
         FileViewerComponent,
         FolderComponent,
@@ -29,36 +41,32 @@ export function declarations() {
         SearchComponent,
         FileEditorComponent,
         UploadFileComponent
-    ];
-}
-
-export function imports() {
-    return [
+    ],
+    imports: [
         BrowserModule,
         FormsModule,
         HttpModule
-    ];
-}
-
-export function providers() {
-    return [FileService];
-}
-
-export function bootstrap() {
-    return [AppComponent];
-}
-
-@NgModule({
-    declarations: declarations(),
-    imports: imports(),
-    providers: providers(),
-    bootstrap: bootstrap()
+    ],
+    exports: [
+        AppComponent,
+        FileViewerComponent,
+        FolderComponent,
+        FolderListComponent,
+        ActionsComponent,
+        AddressComponent,
+        SearchComponent,
+        FileEditorComponent,
+        UploadFileComponent,
+        FileService
+    ],
+    bootstrap: [AppComponent]
 })
 export class NFEModule {
     static forRoot(host: string): ModuleWithProviders {
         environment.API_URL = host;
         return {
-            ngModule: NFEModule
-        }
+            ngModule: NFEModule,
+            providers: [FileService]
+        };
     }
 }

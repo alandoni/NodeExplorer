@@ -1,6 +1,6 @@
 {
   "name": "node-file-explorer",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Node File Explorer",
   "main": "index.js",
   "scripts": {
