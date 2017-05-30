@@ -47,6 +47,9 @@ export * from './file.service';
         FormsModule,
         HttpModule
     ],
+    providers: [
+        FileService
+    ],
     exports: [
         AppComponent,
         FileViewerComponent,
@@ -56,8 +59,7 @@ export * from './file.service';
         AddressComponent,
         SearchComponent,
         FileEditorComponent,
-        UploadFileComponent,
-        FileService
+        UploadFileComponent
     ],
     bootstrap: [AppComponent]
 })
