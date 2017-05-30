@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, Inject, InjectionToken } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +12,7 @@ import { ActionsComponent } from './actions/actions.component';
 import { AddressComponent } from './address/address.component';
 import { SearchComponent } from './search/search.component';
 
-import { FileService } from './file.service';
+import { FileService, HOST_URL } from './file.service';
 import { FileEditorComponent } from './file-editor/file-editor.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 
@@ -63,10 +63,10 @@ export * from './file.service';
 })
 export class NFEModule {
     static forRoot(host: string): ModuleWithProviders {
-        environment.API_URL = host;
+        //environment.API_URL = host;
         return {
             ngModule: NFEModule,
-            providers: [FileService]
+            providers: [FileService, {provide: HOST_URL, useValue: host}]
         };
     }
 }

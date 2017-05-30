@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { environment } from './../environment';
+import { Component, OnInit, Inject, Input, Output, EventEmitter } from '@angular/core';
+import { HOST_URL } from './../file.service';
 
 @Component({
   selector: 'app-upload-file',
@@ -14,9 +14,9 @@ export class UploadFileComponent implements OnInit {
 
   fileName: string;
   url: string;
-  environment = environment;
 
-  constructor() { }
+  constructor(@Inject(HOST_URL) private hostUrl: string) { 
+  }
 
   ngOnInit() {
   }
@@ -26,7 +26,7 @@ export class UploadFileComponent implements OnInit {
     if (this.currentPath.charAt(this.currentPath.length - 1) === '/') {
       this.currentPath = this.currentPath.substr(0, this.currentPath.length - 1);
     }
-    this.url = environment.API_URL + 'upload/' + this.currentPath + '/' + files[0].name;
+    this.url = this.hostUrl + 'upload/' + this.currentPath + '/' + files[0].name;
     console.log(this.url);
   }
 

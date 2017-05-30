@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, InjectionToken } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { environment } from './environment';
 import 'rxjs/add/operator/map';
@@ -6,14 +6,17 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/toPromise';
 
+export const HOST_URL = new InjectionToken('HOST_URL');
+
 @Injectable()
 export class FileService {
 
   current = '/';
 
-  private baseUrl = environment.API_URL;
+  private baseUrl = '';
 
-  constructor(private http: Http) {
+  constructor(@Inject(HOST_URL) private hostUrl: string, private http: Http) {
+    this.baseUrl = hostUrl;
   }
 
   private post(url: String, data: any): Promise<any> {
